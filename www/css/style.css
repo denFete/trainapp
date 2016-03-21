@@ -37,3 +37,29 @@
 	width: 50%;
 	margin: 0 auto;
 }
+
+.avatarExercise{
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	width: 30%;
+	background-color: red;
+}
+.avatarImage{
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	border: solid 2px #ffffff;
+	border-radius: 50%;
+}
+.avatarContent{
+	margin-top: 10px;
+	text-align: center;
+}
+.full{ 
+	overflow: hidden;
+	background-color: blue;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}

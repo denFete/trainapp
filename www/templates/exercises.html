@@ -1,24 +1,10 @@
-<ion-view view-title="Exercises">
+<ion-view view-title="Browse Exercises">
   <ion-content>
-	<img src="http://www.muscles.se/wp-content/uploads/2008/03/test2.gif" class="banner-image" alt="Benchpress">
-	<div class="banner-text">
-		<h2>Benchpress</h2>
-	</div>
-	<div class="item range">
-	  <i class="icon ion-volume-low"></i>
-	  <input type="range" name="volume">
-	  <i class="icon ion-volume-high"></i>
-	</div>
-	<div>
-		<div class="increment-reps-container inner-div" style="width:100%; height:70px; padding:20px;">
-			<button class="button-left button button-stable" ng-click="decrease()">-</button>
-				<p class="txtcenter v-align repcount">{{repsCount}}</p>
-			<button class="button-right button button-stable" ng-click="increase()" ng-init="repsCount=8">+</button>
-		</div>
-	</div>
-	<div class="bottom" style="width:100%;">
-		<button class="button-full button button-stable">Set done</button>
-		<button class="button-full button button-stable">Save exercise</button>
-	</div>
+  	<div class="full v-align">	
+    	<div class="avatarExercise" ng-click="enterTask(exercise.exercises)" ng-repeat="exercise in workoutslist">
+	  		<img class="avatarImage"src="http://gymkhana.iitb.ac.in/~sports/images/profile.png">
+	  		<p class="avatarContent">{{exercise.workoutName}}</p>
+	  	</div>
+  	</div>
   </ion-content>
 </ion-view>

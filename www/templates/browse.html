@@ -1,5 +1,10 @@
-<ion-view view-title="Browse">
+<ion-view view-title="Browse Exercises">
   <ion-content>
-    <h1>Browse</h1>
+  	<div class="full v-align">	
+    	<div class="avatarExercise" ng-click="loadExercises(exercise.exercises);" ng-repeat="exercise in workoutslist" href="#/app/playlists/{{playlist.id}}">
+	  		<img class="avatarImage"src="http://gymkhana.iitb.ac.in/~sports/images/profile.png">
+	  		<p class="avatarContent">{{exercise.workoutName}}</p>
+	  	</div>
+  	</div>
   </ion-content>
 </ion-view>

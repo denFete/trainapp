@@ -41,23 +41,15 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
 
 .controller('ExerciseCtrl', function($scope) {
+
    $scope.count = 15;
    var max = $scope.count + 1;
    var min = $scope.count - 1;
 
   $scope.increment = function() {
+    console.log ("lol")
     if ($scope.count >= max) { return; }
     $scope.count++;
   };
@@ -67,5 +59,30 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+
+.controller('BrowseCtrl', function($scope) {
+
+  $scope.workoutslist = { 
+    "1": {
+        'workoutName': "Bröst",  
+        'exercises': [   
+            {exerciseId: 1, exerciseName: "Snebänk"},  
+            {exerciseId: 2, exerciseName: "Armhävningar"}  
+        ]  
+    },  
+    "2": {
+        'workoutName': "Ben",  
+        'exercises': [ 
+            {exerciseId: 3, exerciseName: "exercise3"},  
+            {exerciseId: 4, exerciseName: "exercise4"}  
+        ]
+    }
+  };
+
+  $scope.loadExercises = function(exercises){
+      console.log (exercises);    
+  };
+
 });
+
+
