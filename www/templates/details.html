@@ -1,0 +1,10 @@
+<ion-view view-title="{{data.muscleName}}">
+  <ion-content>
+  	<div class="full">	
+    	<div class="avatarExercise" ng-click="loadExercises(exercise);" ng-repeat="exercise in data.exercises" href="#/app/playlists/{{playlist.id}}">
+	  		<img class="avatarImage"src="http://gymkhana.iitb.ac.in/~sports/images/profile.png">
+	  		<p class="avatarContent">{{exercise.exerciseName}}</p>
+	  	</div>
+  	</div>
+  </ion-content>
+</ion-view>

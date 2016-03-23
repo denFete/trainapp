@@ -59,19 +59,40 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('DetailsCtrl', function($scope,$stateParams) {
+  $scope.data = $stateParams.exercise;
+  console.log($scope.data)
 
-.controller('BrowseCtrl', function($scope) {
+
+})
+
+
+.controller('BrowseCtrl', function($scope,$state) {
 
   $scope.workoutslist = { 
     "1": {
-        'workoutName': "Bröst",  
+        'muscleName': "Bröst",  
         'exercises': [   
             {exerciseId: 1, exerciseName: "Snebänk"},  
             {exerciseId: 2, exerciseName: "Armhävningar"}  
         ]  
     },  
     "2": {
-        'workoutName': "Ben",  
+        'muscleName': "Ben",  
+        'exercises': [ 
+            {exerciseId: 3, exerciseName: "exercise3"},  
+            {exerciseId: 4, exerciseName: "exercise4"}  
+        ]
+    },  
+    "3": {
+        'muscleName': "Ben",  
+        'exercises': [ 
+            {exerciseId: 3, exerciseName: "exercise3"},  
+            {exerciseId: 4, exerciseName: "exercise4"}  
+        ]
+    },  
+    "4": {
+        'muscleName': "Ben",  
         'exercises': [ 
             {exerciseId: 3, exerciseName: "exercise3"},  
             {exerciseId: 4, exerciseName: "exercise4"}  
@@ -79,8 +100,9 @@ angular.module('starter.controllers', [])
     }
   };
 
-  $scope.loadExercises = function(exercises){
-      console.log (exercises);    
+  $scope.loadExercises = function(exerciseName){
+      $state.go('app.details',{ exercise: exerciseName});
+
   };
 
 });

@@ -42,6 +42,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
+    .state('app.details', {
+      url: '/details',
+      params: {'exercise': null},
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/details.html',
+          controller: 'DetailsCtrl'
+        }
+      }
+    })
     
     .state('app.exercises', {
       url: '/exercises',
