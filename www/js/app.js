@@ -54,11 +54,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
     
-    .state('app.exercises', {
+    .state('app.exercise', {
       url: '/exercises',
+      params: {'exercise': null},
       views: {
         'menuContent': {
-          templateUrl: 'templates/Doexercises.html',
+          templateUrl: 'templates/exercise.html',
           controller: 'ExerciseCtrl'
 
         }

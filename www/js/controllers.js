@@ -42,7 +42,9 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ExerciseCtrl', function($scope) {
+.controller('ExerciseCtrl', function($scope, $stateParams) {
+  $scope.data = $stateParams.exercise;
+  console.log($scope.data)
 
    $scope.count = 15;
    var max = $scope.count + 1;
@@ -57,12 +59,18 @@ angular.module('starter.controllers', [])
     if ($scope.count <= min) { return; }
     $scope.count--;
   };
+
+  $scope.rangeValue = 0;
 })
 
-.controller('DetailsCtrl', function($scope,$stateParams) {
+.controller('DetailsCtrl', function($scope,$stateParams, $state) {
   $scope.data = $stateParams.exercise;
   console.log($scope.data)
 
+  $scope.loadExercises = function(exerciseName){
+      $state.go('app.exercise',{ exercise: exerciseName});
+
+  };
 
 })
 
@@ -92,6 +100,27 @@ angular.module('starter.controllers', [])
         ]
     },  
     "4": {
+        'muscleName': "Ben",  
+        'exercises': [ 
+            {exerciseId: 3, exerciseName: "exercise3"},  
+            {exerciseId: 4, exerciseName: "exercise4"}  
+        ]
+    },  
+    "5": {
+        'muscleName': "Ben",  
+        'exercises': [ 
+            {exerciseId: 3, exerciseName: "exercise3"},  
+            {exerciseId: 4, exerciseName: "exercise4"}  
+        ]
+    },  
+    "6": {
+        'muscleName': "Ben",  
+        'exercises': [ 
+            {exerciseId: 3, exerciseName: "exercise3"},  
+            {exerciseId: 4, exerciseName: "exercise4"}  
+        ]
+    },  
+    "7": {
         'muscleName': "Ben",  
         'exercises': [ 
             {exerciseId: 3, exerciseName: "exercise3"},  

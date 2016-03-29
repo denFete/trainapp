@@ -1,0 +1,26 @@
+<ion-view view-title="{{exerciseName}}">
+  <ion-content>
+	<img src="http://www.dickson-constant.com/medias/images/catalogue/api/m654-grey-680.jpg" class="banner-image">
+	<div class="banner-text">
+		<h2>{{data.exerciseName}}</h2>
+	</div>
+	<h2 class="txtcenter">{{rangeValue}}</h2>
+	<div class="item range" >
+	  <i class="icon ion-navicon"></i>
+	  <input type="range" name="volume" min="1" max="300" ng-change="drag(rangeValue)" ng-model="rangeValue">
+	  <i class="icon ion-navicon-round"></i>
+	</div>
+	<div class="full">	
+		<div class="repscontainer">
+			<button class=" button-left button button-stable" ng-click="decrease()">-</button>
+				<p class="txtcenter" style="display:inline;">{{repsCount}}</p>
+			<button class="button-right button button-stable" ng-click="increase()" ng-init="repsCount=8">+</button>
+		</div>
+	</div>
+
+		<div class="bottom" style="width:100%;">
+			<button class="button-full button button-stable">Set done</button>
+			<button class="button-full button button-stable">Save exercise</button>
+		</div>
+  </ion-content>
+</ion-view>
